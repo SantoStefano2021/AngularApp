@@ -1,0 +1,65 @@
+<html>
+    <p>{{getTitle()}}</p>
+
+    <button (click) = "pay()">Pav!!!</button>
+
+    <p>Stai pagando: {{count}}</p>
+
+
+    <input
+    id="amount"
+    size="20"
+    [ngModel]='eur'
+    (ngModelChange)="onInput($event)">
+    <p>{{eur}}</p>
+
+    <p>Sono il figlio: {{name}}</p>
+
+
+    <button [disabled] = "propertyBinding">Premi </button> <!--property binding, si aggisce direttamente sulla proprietà di un oggetto html-->
+    <p>{{ propertyBinding }}</p> <!--string interpolation-->
+
+
+
+    <!--two-way  binding-->
+
+    <input type="text" [(ngModel)] = "serverName">
+
+    <br>
+    <input type="text" (input)="update($event)">
+
+    <br>
+    <p>{{serverName}}</p>
+
+    <br>
+    
+    <button (click) = "dataBinding()">Clicca</button>
+
+
+    <br>
+    <button [disabled] = "serverName === ''"
+    (click) = "serverName = ''">Reset</button>
+
+
+    <div *ngIf="serverName === 'Matteo'" [ngStyle] = "{'color': 'red'}" 
+    [ngClass] = "{  
+        online: serverName === 'Matteo'
+    }">
+        <p>Condizione soddisfatta</p>
+    </div>
+
+
+    <br>
+
+    <p *ngFor = "let value of server">ngFor {{value}}</p>
+
+
+    <br>
+
+    <button (click) = "Push()">Logga</button>
+<div>
+    <p *ngFor = "let value of log; let i = index" 
+    [ngStyle] = "{backgroundColor: value > 10 ? 'yellow' : 'blue'}"
+    [ngClass] = "{'textColor': i > 12}">  value</p>
+</div>
+</html>

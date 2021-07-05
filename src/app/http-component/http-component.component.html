@@ -1,0 +1,51 @@
+
+<div class="d-grid gap-2 col-6 mx-auto">
+<button class="btn btn-primary" type="button" (click) = "findAll()">findAll</button>
+</div>
+<!--
+<div *ngFor="let dispositivo of dispMedico | async ">
+    <p>{{ dispositivo.nomeDispositivo | json }}</p>
+</div>
+-->
+<br>
+<!--
+<table>
+    <tr>Matricola</tr>
+    <td *ngFor="let dispositivo of dispositivoMedicoPost | async ">
+    <p>{{ dispositivo.matricola | json }}</p>
+</td>
+</table>
+-->
+<div class="d-grid gap-2 col-6 mx-auto">
+<form #form="ngForm">
+    <label>Insert name for Find By device name</label>
+    <input type="text" name="deviceName" placeholder="Insert device name" class="form-control"
+    ngModel>
+</form>
+<p>{{ form.value.deviceName }}</p>
+
+
+<button class="btn btn-primary" (click) = "findByNomeDipositivo(form.value.deviceName)">Search for deviceName</button>
+</div>
+
+<br><br>
+<br><div *ngIf="dispMedico"> 
+    <div class="table-responsive">
+    <table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+       <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let el of dispMedico | async ">
+        <th scope="row">{{el.matricola}}</th>
+        <td>{{el.nomeDispositivo}}</td>
+        <td>{{el.timestamp}}</td>
+        <td><button class="btn" type="button"  class="glyphicon glyphicon-remove" (click)="Delete(el.nomeDispositivo)"></button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br><br>
+<!--<app-insert-new-dispositivo></app-insert-new-dispositivo>-->

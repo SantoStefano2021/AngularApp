@@ -1,0 +1,18 @@
+<div class="table-responsive">
+    <table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+       <th *ngFor="let head of headElements" scope="col" class="text-center">{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let el of finalObject">
+        <th scope="row">{{el.id}}</th>
+        <td>{{el.node_chipid}}</td>
+        <td>{{el.val1}}</td>
+        <td>{{el.val2}}</td>
+        <td>{{el.timestamp_operation}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

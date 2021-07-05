@@ -1,0 +1,15 @@
+<br>
+<div class="container">
+  <button class="btn btn-primary" (click) = "NuovoDispositivo()">Crea nuovo dispositivo</button>
+  <br><br>
+  <div *ngIf="nuovoDispositivo === true" class="vertical-center">
+  <form #newDispositivoM="ngForm" novalidate class="center">
+      <label for="formGroupExampleInput">Nome Dispositivo</label>
+      <input type="text" class="form-control" id="nomeDispositivo" name="nomeDispositivo" placeholder="Nome Dispositivo" ngModel>
+  <br>
+      <label for="formGroupExampleInput2">Matricola Dispositivo</label>
+      <input type="text" class="form-control" id="matricola" name="matricola" placeholder="Matricola Dispositivo" ngModel>  <br>
+  <button  type="submit" class="btn btn-primary" (click)="onSubmit(newDispositivoM.value)">Aggiungi dispositivo</button>
+  </form>
+  </div>
+</div>
