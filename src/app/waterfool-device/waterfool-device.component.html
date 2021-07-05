@@ -1,0 +1,16 @@
+<div class="table-responsive">
+    <table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+       <th *ngFor="let head of headElements" scope="col" class="text-center"><b></b>{{head}} <b></b></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let el of device">
+        <th scope="row" class="thClass">{{el.node_chipid}}</th>
+        <td>{{el.description}}</td>
+        <td>{{el.unit}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

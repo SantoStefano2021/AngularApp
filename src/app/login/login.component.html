@@ -1,0 +1,22 @@
+<div class="container">
+<form class="form-horizontal" #formLogin = "ngForm">
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="username">Username:</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" ngModel>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Password:</label>
+    <div class="col-sm-3">
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" ngModel>
+    </div>
+  </div>
+  <br>
+  <div class="form-group">
+    <div class="col-sm-6">
+      <button type="submit" class="btn btn-primary" (click)="login(formLogin.value)">Login</button>
+    </div>
+  </div>
+</form>
+</div>
